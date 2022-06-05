@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="frontstyle.css">
+    <link rel="stylesheet" href="datastyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="navbar" id="navbarId">
+        <h1>Readingo</h1>
+        <div class="main">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="search.html">Search</a>
+            <a href="#">Contact Us</a>
+        </div>
+        <div class="navbar-valid">
+            <a href="SignupSignin.html">Login</a>
+            <a href="SignupSignin.html">Sign Up</a>
+        </div>
+        <div class="xmarks" id="xmarksid">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+    </div>
+    <div class="bar" id="baricon">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="container" id="contid">
+        <div class="slider">
+            <input type="radio" name="btn" id="radio1" class="btn" active>
+            <input type="radio" name="btn" id="radio2" class="btn">
+            <input type="radio" name="btn" id="radio3" class="btn">
+            <input type="radio" name="btn" id="radio4" class="btn">
+            <input type="radio" name="btn" id="radio5" class="btn">
+            <div class="slide first" >
+                <video src="video/1.mp4" autoplay muted loop class="video-slide active"></video>
+            </div>
+            <div class="slide">
+                <video src="video/2.mp4" autoplay muted loop class="video-slide"></video>
+            </div>
+            <div class="slide">
+                <video src="video/3.mp4" autoplay muted loop class="video-slide"></video>
+            </div>
+            <div class="slide">
+                <video src="video/4.mp4" autoplay muted loop class="video-slide"></video>
+            </div>
+            <div class="slide">
+                <video src="video/5.mp4" autoplay muted loop class="video-slide"></video>
+            </div>
+           
+            <div class="auto">
+                <label for="radio1" id="btns" class="lab active"></label>
+                <label for="radio2" id="btns" class="lab"></label>
+                <label for="radio3" id="btns" class="lab"></label>
+                <label for="radio4" id="btns" class="lab"></label>
+                <label for="radio5" id="btns" class="lab"></label>
+            </div>
+        </div>
+        <div class="data">
+            <h1>Books are Friend</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt ratione obcaecati facere sapiente qui alias iste numquam, tempore velit, excepturi animi eum saepe!</p>
+            <div class="btns">
+                <button id="srch1">Read</button>
+                <button id="srch">Explore</button>
+                <script>
+                    document.getElementById("srch").addEventListener("click",()=>{
+                        window.open("SignupSignin.html");
+                    })
+                    document.getElementById("srch1").addEventListener("click",()=>{
+                        window.open("mainproject.html");
+                    })
+                </script>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        let btn = document.querySelectorAll('.btn');
+        let labels = document.querySelectorAll(".lab");
+        let video = document.querySelectorAll('.video-slide');
+        function slider(manual){
+           btn[manual].checked = true;
+        }
+        btn.forEach((item,index)=>{
+            item.addEventListener('click',()=>{
+                slider(index);
+                labels.forEach((lab)=>{
+                lab.classList.remove("active");
+                })
+                labels[index].classList.add("active");
+                video.forEach((v)=>{
+                    v.classList.remove("active");
+                })
+                video[index].classList.add("active");
+            });
+        });var l=0;
+        setInterval(()=>{
+            l++;if(l>5){l=1}
+            document.getElementById(`radio`+l).checked = true;
+            labels.forEach((lab)=>{
+                lab.classList.remove("active");
+           })
+           labels[l-1].classList.add("active");
+           video.forEach((v)=>{
+                    v.classList.remove("active");
+            })
+            video[l-1].classList.add("active");
+        },9000);
+        document.getElementById("baricon").addEventListener('click',()=>{
+            document.getElementById("navbarId").classList.toggle("active");
+            document.getElementById("baricon").classList.toggle('active');
+            document.getElementById("contid").classList.toggle('active');
+        })
+        document.getElementById("xmarksid").addEventListener('click',()=>{
+            document.getElementById("navbarId").classList.remove("active");
+            document.getElementById("baricon").classList.remove('active');
+            document.getElementById("contid").classList.remove('active');
+        })
+
+        // let slide = document.getElementById("first-slide")
+        // var left=0;
+        // setInterval(()=>{
+        //     if(left==400){left=0;}
+        //     left = left+100;
+        //     slide.style.marginLeft = `-${left}%`;
+        //     console.log(slide.style.marginLeft);
+        // },2000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="searchstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="search">
+        <input type="search" name="" id="filter" class="filt" onkeyup="search();">
+        <i class="fa-solid fa-magnifying-glass" id="srch" onclick="search();"></i>
+    </div>
+    <div class="search-container">
+        <script src="data.js"></script>
+        <ul id="list">
+            <script>
+                var a=``;
+                for(var i=0;i<data.length;i++){
+                    a=a+`<li>
+                        <div class="cover">
+                            <img src=${data[i].src} alt="">
+                        </div>
+                        <p>${data[i].name}</p>
+                        <button>Buy</button>
+                    </li>`;
+                }
+                document.getElementById("list").innerHTML = a;
+            </script>
+            <script>
+                var input="",a;
+                function search(){
+                   input = document.getElementById("filter").value;
+                   input = input.toUpperCase();
+                   console.log(input);
+                   let ul = document.getElementById("list");
+                   let li = ul.getElementsByTagName("li");
+                   for(var i=0;i<li.length;i++){
+                       a = li[i].getElementsByTagName("p")[0];
+                       console.log(a.innerHTML.toUpperCase());
+                       if(a.innerHTML.toUpperCase().indexOf(input)>-1){
+                           li[i].style.display = "flex";
+                       }else{
+                            li[i].style.display = "none";
+                       }
+                   }
+                }
+            </script>
+        </ul>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+.data{
+    position: absolute;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+    letter-spacing: 2px;
+    top: 350px;
+    left: 60px;
+    width: 600px;
+    height: 400px;
+}
+.data h1{
+    font-size: 50px;
+    color: rgb(255, 253, 253);
+    margin-bottom: 20px;
+}
+.data >.btns button{
+    border-radius: 5px;
+    padding: 10px 115px;
+    margin-top: 20px;
+    border: 2px solid white;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-weight: 800;
+    font-size: 15px;
+}
+.data >.btns button:hover{
+    background-color: white;
+    transform: scale(1.1);
+    color: black;
+}

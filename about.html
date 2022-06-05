@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+    body{
+        height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        background-color: rgb(212, 167, 175);
+    }
+    .about{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items:center;
+        overflow: hidden;
+    }
+    .about video{
+        min-width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
+    .about .about-info{
+        height: 90%;
+        width: 90%;
+        background-color: rgb(255, 255, 255,0.5);
+        position: absolute;
+        border-radius: 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .about .about-info .per-1 {
+        overflow: hidden;
+        position: absolute;
+        border-radius: 20px;
+        height: 600px;
+        width: 400px;
+        margin: 20px 0px 0px 20px;
+    }
+    .about .about-info .per-1 img{
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        mix-blend-mode: hue;
+        cursor: pointer;
+        filter: saturate(105%);
+        transition: all 0.3s;
+    }
+    .about .about-info .per-1 img:hover{
+        mix-blend-mode: normal;
+        filter: saturate(100%);
+    }
+    .about .about-info .per-1  h1{
+        font-family: 'Poppins',sans-serif;
+        position: absolute;
+        top: 500px;
+        left: 80px;
+        color: white;
+        font-size: 40px;
+        font-weight: 400;
+    }
+    .about .about-info .per-1 p{
+        font-family:'Dancing Script', cursive;
+        position: absolute;
+        top: 560px;
+        left: 80px;
+        color: white;
+    }
+    .about .about-info .per-2 {
+        overflow: hidden;
+        position: absolute;
+        right: 80px;
+        bottom: 30px;
+        height: 600px;
+        width: 400px;
+        margin: 20px 0px 0px 20px;
+        border-radius: 20px;
+    }
+    .about .about-info .per-2 img{
+        object-fit: cover;
+        mix-blend-mode: hue;
+        filter: saturate(105%);
+        transition: all 0.3s;
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+    }
+    .about .about-info .per-2 img:hover{
+        mix-blend-mode: normal;
+        filter: saturate(100%);
+    }
+    .about .about-info .per-2  h1{
+        font-family: 'Poppins',sans-serif;
+        position: absolute;
+        top: 500px;
+        right: 80px;
+        color: white;
+        font-size: 40px;
+        font-weight: 400;
+    }
+    .about .about-info .per-2 p{
+        font-family:'Dancing Script', cursive;
+        position: absolute;
+        top: 560px;
+        right: 80px;
+        color: white;
+    }
+    .about .about-info .web-info{
+        width: 600px;
+        height: 500px;
+        margin-top: 160px;
+        word-wrap:normal;
+        margin-left: 30%;
+        overflow: hidden;
+    }
+    .about .about-info .web-info h1{
+        font-family: 'Poppins',sans-serif;
+        font-size: 50px;
+        font-weight: 600;
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+        text-transform: uppercase;
+    }
+    .about .about-info .web-info p{
+        width: 600px;
+        font-family:'Dancing Script', cursive;
+    }
+    .about >.about-info > h1{
+        text-transform: white;
+        text-shadow: 0px 0px 10px rgba(0,0,0,0.7);
+        font-family:'Dancing Script', cursive;
+        margin-left: 40%;
+        display: flex;
+        font-size: 90px;
+        position: absolute;
+        z-index: 5;
+        justify-content: center;
+    }
+</style>
+<body>
+    <div class="about">
+        <!-- <video src="video/back.mp4" autoplay muted loop></video> -->
+        <div class="about-info">
+            <h1>Who are we</h1>
+            <div class="per-1">
+                <img src="image/vipin.jpg" alt="">
+                <h1>Vipin Bhati</h1>
+                <p>Co Founder, Designer and Techincal Head</p>
+            </div>
+            <div class="web-info">
+                <h1>A diverse team <br> by friends</h1>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore non quaerat placeat repellat veniam necessitatibus error rerum dolor itaque aliquid deleniti impedit laboriosam voluptas pariatur harum alias, nobis vero rem cupiditate temporibus repudiandae! Aliquid minima doloremque iure repellat amet, fugiat ipsam perspiciatis quibusdam. Quibusdam voluptatem, nisi sit nam ducimus sint aliquam doloremque rerum deserunt, possimus praesentium alias. Minus, eum cumque. Minus sint at inventore, pariatur neque quos, a animi ad, vero fugit nemo ullam quas. Vero voluptatum a corporis tempore totam sapiente dolore molestiae libero quaerat odio, quos doloribus recusandae sed ducimus animi excepturi earum amet expedita quod consectetur minus accusamus necessitatibus consequuntur! Officia, asperiores! Numquam odio corrupti incidunt unde dolorem officiis, odit animi. Eaque, blanditiis quasi esse facilis incidunt quidem. Praesentium expedita consectetur ad dolore deleniti laboriosam doloribus perferendis harum ex. Delectus natus, exercitationem odit dicta maiores quibusdam necessitatibus quis, omnis rem pariatur sequi totam excepturi dolor. Quae aliquam, fugit illum incidunt similique, est nemo cumque quis ex nisi, eaque eius aliquid impedit voluptas qui nobis corporis doloribus vitae explicabo asperiores laudantium sunt. Quis, ex dolor ipsa quos eaque ea, sunt velit culpa reiciendis, ipsum ut dolorem optio nobis beatae eveniet amet modi soluta quas eum? Quo nostrum dicta ipsum a, repellendus laboriosam enim, voluptate nulla illum libero earum quod harum aliquam animi ullam maxime aliquid odit nihil cumque delectus adipisci illo ut ducimus fuga. Delectus, impedit! Repellendus dicta enim maiores nihil et. Minus alias pariatur eos cum neque eligendi consequatur, quia, cumque iure magni aliquid fuga dolorem amet!</p>
+            </div>
+            <div class="per-2">
+                <img src="image/jk.jpg" alt="">
+                <h1>JK Charam</h1>
+                <p>Co Founder, Designer and Techincal Head</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

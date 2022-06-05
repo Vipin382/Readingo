@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/formstyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<style>
+    
+</style>
+<body>
+    <div class="validation">
+        <form action="signup.php" method="post" class="signup">
+            <div class="signupTitle">
+                <h1>Welcome back</h1>
+                <p>Welcome back! Please enter your details</p>
+            </div>
+            <div class="signup-email">
+                <p>Email</p>
+                <input type="email" name="signupEmail" id="">
+            </div>
+            <div class="signup-pass">
+                <p>Password</p>
+                <input type="password" name="signupPassword" id="">
+            </div>
+            <div class="signup-gener">
+                <select name="signupGener">
+                    <option value="Thriller">Thriller</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Action">Action</option>
+                    <option value="Romance">Romance</option>
+                </select>
+            </div>
+            <div class="signup-btns">
+                <button type="submit">Sign up</button>
+            </div>
+        </form>
+        <form class="signin" action="" method="post">
+            <div class="signinTitle">
+                <h1>Welcome back</h1>
+                <p>Welcome back! Please enter your details</p>
+            </div>
+            <div class="signin-email">
+                <p>Email</p>
+                <input type="email" name="loginEmail" id="">
+            </div>
+            <div class="signin-pass">
+                <p>Password</p>
+                <input type="password" name="loginPass" id="">
+            </div>
+            <div class="signinrecover">
+                <a href="#">Remember for 30 days</a>
+                <a href="#">Forget password</a>
+            </div>
+            <div class="signin-btns">
+                <button type="submit">Sign in</button>
+                <button type="submit">Sign in with Google</button>
+            </div>
+            <div class="register">
+                <p>Don't have an account?</p>
+                <h2>Sign up for free</h2>
+            </div>
+        </form>
+        <div class="look" id="look-box">
+            <div class="look-image">
+                <img src="image/1.jpg" alt="loading">
+            </div>
+            <div class="look-info">
+                <div class="look-btn">
+                    <input type="button" value="Login" id="looklogin">
+                    <input type="button" value="Register" id="looklogout">
+                </div>
+                <div class="look-quotes">
+                    <h2>Books are the quietest and most constant of friends; 
+                        they are the most accessible and wisest of counselors,
+                         and the most patient of teachers.
+                    </h2>
+                    <p>Charles W. Eliot</p>
+                </div>
+                <img src="image/stars.png" alt="">
+            </div>
+            <script>
+                document.getElementById("looklogin").addEventListener('click',()=>{
+                    document.getElementById("look-box").classList.add("active");
+                    document.getElementById("look-box").style.transition = "all 2s"
+                })
+                document.getElementById("looklogout").addEventListener('click',()=>{
+                    document.getElementById("look-box").classList.remove("active");
+                    document.getElementById("look-box").style.transition = "all 2s"
+                })
+            </script>
+        </div>
+    </div>
+</body>
+</html>

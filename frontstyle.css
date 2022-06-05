@@ -1,0 +1,249 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    width: 100%;
+}
+.navbar{
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    display: block;
+    overflow: auto;
+}
+.navbar > h1{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family:'Poppins',sans-serif;
+    padding: 14px;
+    float: left;
+}
+.navbar >.main{
+    float: left;
+}
+.navbar >.main a{
+    text-transform: uppercase;
+    float: left;
+    color: white;
+    padding: 24px;
+    position: relative;
+    text-decoration: none;
+    margin-left: 24px;
+}
+.navbar .navbar-valid{
+    float: right;
+}
+.navbar .navbar-valid a{
+    text-transform: uppercase;
+    color: white;
+    float: left;
+    text-decoration: none;
+    position: relative;
+    padding: 24px;
+    margin-left: 24px;
+}
+.navbar .navbar-valid a::after{
+    content: '';
+    width: 0%;
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.navbar >.main > a::after{
+    content: '';
+    width: 0%;
+    background-color: white;
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.navbar > .main >a:hover::after{
+    width: 100%;
+}
+.navbar .navbar-valid a:hover::after{
+    width: 100%;
+}
+.navbar .xmarks{
+    display: none;
+}
+.bar{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    width: 60px;
+    display: none;
+}
+.bar i{
+    font-size: 40px;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.slider{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+.slider .slide{
+    min-width: 100%;
+    position: relative;
+    margin-left: 0;
+    transition: all 0.5s;
+}
+.slider .slide video{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    filter: saturate(117%);
+}
+.video-slide{
+    clip-path: circle(0% at 0% 100%);
+    transition: all 0.4s;
+}
+.video-slide.active{
+    clip-path: circle(150% at 0% 100%);
+    transition: all 02s;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+@media only screen and (max-width: 1025px){
+    .navbar{
+        height: 100vh;
+        width: 400px;
+        left: -400px;
+        background-color: rgb(53, 52, 52);
+        display: flex;
+        position: relative;
+        justify-content: center;
+        overflow: hidden;
+        flex-direction: column;
+        transition: all 0.4s;
+        padding: 40px 0px;
+    }
+    .navbar.active{
+        left: 0;
+    }
+    .navbar > .main{
+        display: flex;
+        flex-direction: column;
+    }
+    .navbar > .main a{
+        text-align: center;
+        margin-left: 0;
+    }
+    .navbar h1{
+        text-align: center;
+        position: relative;
+        top: -180px;
+    }
+    .navbar .navbar-valid{
+       display: flex;
+       flex-direction: column;
+    }
+    .navbar .navbar-valid a{
+        text-align: center;
+        margin-left: 0;
+    }
+    .navbar .xmarks{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .navbar .xmarks i{
+        font-size: 40px;
+        color: rgb(114, 114, 114);
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+    .navbar .xmarks i:hover{
+        color: white;
+    }
+    .bar{
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        top: 20px;
+        left: 20px;
+    }
+    .bar.active{
+        display: none;
+    }
+    .bar i{
+        font-size: 60px;
+        transition: all 0.3s;
+    }
+    .bar i:hover{
+        color: white;
+    }
+    .container{
+        position: absolute;
+        top: 0;
+        margin-left: 0;
+        transition: all 0.4s;
+    }
+    .container.active{
+        margin-left: 400px;
+    }
+} 
+@media only screen and (max-width: 600px){
+    .navbar.active{
+        width: 100%;
+        height:100vh;
+    }
+    .container.active{
+        margin-left: 100%;
+    }
+}
+.slider > input{
+    display: none;
+}
+.lab.active{
+    background-color: rgb(68, 156, 214,0.6);
+}
+.auto{
+    width: 200px;
+    height: 25px;
+    left: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 90%;
+}
+.auto label{
+    border: 2px solid black;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+#radio1:checked~ .first{
+    margin-left: 0%;
+}
+#radio2:checked~ .first{
+    margin-left: -100%;
+}
+#radio3:checked~ .first{
+    margin-left: -200%;
+}
+#radio4:checked~ .first{
+    margin-left: -300%;
+}
+#radio5:checked~ .first{
+    margin-left: -400%;
+}
